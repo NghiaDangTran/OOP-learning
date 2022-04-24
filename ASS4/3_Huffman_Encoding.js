@@ -5,16 +5,16 @@ let IntHash = require("./IntHash");
 let Hashable = require("./hashVal");
 let Huffman_Trees = require("./2_Huffman_Trees");
 const fs = require('fs');
+
+
+
 function main() {
     let table = new Hash_table(500);
     // read the file as a string line by line
-    
+
     const readline = require('readline');
 
-    fs.readFile('input.txt', 'utf-8', (err, data) => {
-        if (err) throw err;
 
-    })
 
     let str = fs.readFileSync('input.txt', 'utf8').split('\n');
     // processLineByLine();
@@ -63,7 +63,6 @@ function main() {
     let dict = {};
     array[0].encodingALl(array[0], "");
     array[0].encoding_dict(array[0], dict);
-    console.log(dict);
 
     let output = "";
     for (let i = 0; i < str.length; i++) {
@@ -74,33 +73,41 @@ function main() {
         output += "\n";
     }
 
-    console.log(output);
+    // console.log(output);
 
 
     fs.writeFile('output.txt', output, (err) => {
         if (err) throw err;
         console.log('The file has been saved!');
     }
+
     );
-    
 
 
 
+    // function decode(data, dict) {
+    //     let result = data.split(" ");
+    //     console.log(result);
+    //     let output = "";
+    //     for (let i = 0; i < result.length; i++) {
+    //         if (result[i].includes("\n")) {
+    //             output += "\n";
+    //             result[i]=result[i].replace("\n","");
+    //         }
+    //         for (let j = 0; j < Object.keys(dict).length; j++) {
+    //             if (dict[Object.keys(dict)[j]] == result[i]) {
+    //                 output += Object.keys(dict)[j];
+    //                 break;
+    //             }
+    //         }
+          
+    //     }
+    //     console.log(output);
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+    // }
+    // // console.log(dict);
+    // decode(output, dict);
 
 
 
